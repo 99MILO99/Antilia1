@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="TelaDeLogin.css">
+    <title>Antilia</title>
+</head>
+
+<body>
+
+    <div class="main-login">
+
+        <div class="left-login">
+            <h1>Antilia</h1>
+            <p>venha fazer parte do nosso time</p>
+            <img src="img/image-removebg-preview.png" class="left-img" alt="busola">
+        </div>
+
+        <div class="rigth-login">
+
+            <div class="card-login">
+                <h1>Tela de login</h1>
+
+                    <div class="text-field">  
+                        <label for="gmail">Gmail</label>
+                        <input type="text" name="Gmail" placeholder="exemple@gmail.com" required>
+                    </div>
+
+                    <div class="text-field">  
+                        <label for="senha">Senha</label>
+                        <input type="password" id="txt_senha" name="Senha" placeholder="Sua senha" required>
+                    </div>
+          
+                    <div class="text-action">
+
+                        <button class="bnt-login" onclick="window.location.href='lobby.html'">Login</button>
+                        <button class="bnt-redefini" onclick="window.location.href='EsqueceuConta.html'">Esqueci a Senha</button>
+                        <p>Ainda não tem uma conta?</p>
+                        <button class="bnt-criar" onclick="window.location.href='CriarConta.html'">Criar Conta</button>
+                        
+                    </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="login.js"></script>
+
+</body>
+
+</html>

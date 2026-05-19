@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Registra item ou procura</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    
+</head>
+<body>
+    
+
+    <h1>Achados e Perdidos Unipê</h1>
+
+    <div id="status">
+        <br>Bem Vindo!</div>
+
+    <div class="bloco">
+        <h3>1 - Procurar um item</h3>
+        <input type="text" id="txt_procurar" placeholder="Nome do item...">
+        <button py-click="procurar">Buscar</button>
+    </div>
+
+    <div class="bloco">
+        <h3>2 - Deixar um item achado</h3>
+        <input type="text" id="txt_achado" placeholder="O que você achou?">
+        <button py-click="registrar_achado">Registrar</button>
+    </div>
+
+    <div class="bloco"> 
+        <h3>3 - Anunciar um item perdido</h3>
+        <input type="text" id="txt_perdido" placeholder="O que você perdeu?">
+        <button py-click="anunciar_perda">Anunciar</button>
+    </div>
+
+     <div id="home"> 
+        <button onclick="window.location.href='lobby.html'">
+            pagina inicial
+        </button>
+    </div>
+ 
+    <script src="amarzenar.js"></script>
+   
+</body>
+</html>
