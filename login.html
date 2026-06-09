@@ -4,51 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="TelaDeLogin.css">
-    <title>Antilia</title>
+    <title>Antilia - Login</title>
 </head>
-
 <body>
 
-    <div class="main-login">
+    <main class="main-login">
 
-        <div class="left-login">
+        <section class="left-login">
             <h1>Antilia</h1>
-            <p>venha fazer parte do nosso time</p>
-            <img src="img/image-removebg-preview.png" class="left-img" alt="busola">
-        </div>
+            <p>Venha fazer parte do nosso time</p>
+            <img src="img/image-removebg-preview.png" class="left-img" alt="Bússola logo da Antilia">
+        </section>
 
-        <div class="rigth-login">
+        <section class="right-login">
 
             <div class="card-login">
-                <h1>Tela de login</h1>
+                <h2>Tela de Login</h2>
 
+                <form id="login-form" class="form-login">
+                    
                     <div class="text-field">  
-                        <label for="gmail">Gmail</label>
-                        <input type="text" name="Gmail" placeholder="exemple@gmail.com" required>
+                        <label for="txt-email">E-mail</label>
+                        <input type="email" id="txt-email" name="email" placeholder="exemplo@gmail.com" required>
                     </div>
 
                     <div class="text-field">  
-                        <label for="senha">Senha</label>
-                        <input type="password" id="txt_senha" name="Senha" placeholder="Sua senha" required>
+                        <label for="txt-senha">Senha</label>
+                        <input type="password" id="txt-senha" name="senha" placeholder="Sua senha" required>
                     </div>
           
                     <div class="text-action">
-
-                        <button class="bnt-login" onclick="window.location.href='lobby.html'">Login</button>
-                        <button class="bnt-redefini" onclick="window.location.href='EsqueceuConta.html'">Esqueci a Senha</button>
-                        <p>Ainda não tem uma conta?</p>
-                        <button class="bnt-criar" onclick="window.location.href='CriarConta.html'">Criar Conta</button>
+                        <button type="submit" class="btn-login">Entrar</button>
+                        <a href="EsqueceuConta.html" class="link-action">Esqueci a Senha</a>
                         
+                        <span class="divider-text">Ainda não tem uma conta?</span>
+                        <a href="CriarConta.html" class="btn-criar">Criar Conta</a>
                     </div>
 
+                </form>
             </div>
 
-        </div>
+        </section>
 
-    </div>
+    </main>
 
     <script src="login.js"></script>
-
 </body>
-
 </html>

@@ -1,24 +1,28 @@
-body {
+/* 1. Imports de fontes sempre no topo do arquivo */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap');
+
+/* 2. Reset Global de estilo */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+    font-family: 'Open Sans', sans-serif;
 }
 
-body * {
-    box-sizing: border-box;
+body {
+    overflow: hidden;
+    background-color: #079FF2;
 }
 
 .main-login {
     width: 100vw;
     height: 100vh;
-    background-color: #079FF2;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
 }
 
+/* Seção Esquerda (Apresentação) */
 .left-login {
     width: 50vw;
     height: 100vh;
@@ -30,19 +34,23 @@ body * {
 
 .left-login > h1 {
     color: #FFFFFF;
-    font-size: 50pt;
+    font-size: 3.5rem;
 }
 
 .left-login > p {
     color: #FFFFFF;
-    font-size: 20pt;
+    font-size: 1.25rem;
+    margin-top: 5px;
 }
 
-.left-login-img {
+.left-img {
     width: 35vw;
+    max-width: 400px;
+    margin-top: 20px;
 }
 
-.rigth-login {
+/* Seção Direita (Formulário) */
+.right-login {
     width: 50vw;
     height: 100vh;
     display: flex;
@@ -52,20 +60,25 @@ body * {
 
 .card-login {
     width: 60%;
+    max-width: 420px; /* Impede que o card estique demais em monitores muito grandes */
     display: flex;
-    justify-content: center;
-    align-items: center;  
     flex-direction: column;
-    padding: 30px 35px;
+    padding: 35px;
     background: #83CCF2;
     border-radius: 25px;
     box-shadow: 0px 10px 40px #083367;
 }
 
-.card-login > h1 {
+.card-login > h2 {
     color: #E4EAEB;
     font-weight: 800;
-    margin: 0;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+.form-login {
+    width: 100%;
 }
 
 .text-field {
@@ -73,246 +86,143 @@ body * {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
-    margin: 10px 0px;
-}
-
-.text-field > input {
-    width: 100%;
-    border: none;
-    border-radius: 10px;
-    padding: 15px;
-    background: #ffffff;
-    color: #000000;
-    font-size: 12pt;
-    box-shadow: 0px 10px 40px;
-    outline: none;
-    box-sizing: border-box;
+    margin: 12px 0px;
 }
 
 .text-field > label {
     color: #ffffff;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Seletores unificados para garantir tamanho identico em ambos os inputs */
+.text-field > input[type="email"],
+.text-field > input[type="password"] {
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    padding: 15px;
+    background: #ffffff;
+    color: #000000;
+    font-size: 1rem;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    outline: none;
+    box-sizing: border-box; /* Garante que o padding não estoure a largura */
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+/* Feedback visual focado (Acessibilidade e UX) */
+.text-field > input:focus {
+    box-shadow: 0px 0px 0px 3px #083367;
 }
 
 .text-field > input::placeholder {
-    color: #000000;
+    color: #757575;
 }
 
+/* Container de Ações e Botões */
 .text-action {
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;  
     flex-direction: column;
-    padding: 30px 35px;
-    border-radius: 25px;
+    align-items: center;  
+    padding-top: 15px;
 }
 
-.bnt-login {
-    width: 80%;
-    padding: 8px 8px;
+/* Estilo unificado para os botões e links estruturados como botões */
+.btn-login, .btn-criar {
+    width: 100%;
+    padding: 14px;
     border-radius: 15px;
-    outline: lone;
+    border: none;
     text-transform: uppercase;
     font-weight: 700;
-    letter-spacing: 3px;
-    color: #83CCF2;
-    background-color: #000000;
+    letter-spacing: 2px;
     cursor: pointer;
-    box-shadow: 0px 10px 40px -12px #ffffff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: transform 0.1s, background-color 0.2s;
 }
 
-.bnt-redefini {
-    width: 55%;
+.btn-login {
+    color: #83CCF2;
+    background-color: #000000;
+    box-shadow: 0px 8px 25px -10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-login:hover {
+    background-color: #1a1a1a;
+}
+
+.link-action {
+    color: #083367;
+    text-decoration: none;
+    font-size: 0.9rem;
     margin-top: 15px;
-    padding: 3px 5px;
-    border-radius: 15px;
-    outline: lone;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #83CCF2;
-    background-color: #000000;
-    cursor: pointer;
-    box-shadow: 0px 10px 40px -12px #ffffff;
+    font-weight: 600;
 }
 
-.text-action > p {
-    display: flex;
-   font-size: 13pt;
-   color: #83CCF2;
-   margin-top: 20px;
+.link-action:hover {
+    text-decoration: underline;
 }
 
-.bnt-criar {
-    width: 55%;
-    padding: 3px 5px;
-    border-radius: 15px;
-    outline: lone;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #83CCF2;
-    background-color: #000000;
-    cursor: pointer;
-    box-shadow: 0px 10px 40px -12px #00D8FF;
+.divider-text {
+    font-size: 0.9rem;
+    color: #ffffff;
+    margin: 25px 0 15px 0;
 }
 
-@media screen and (max-width: 1300px){
-    .left-login {
-        width: 50%;
-    }
-
-    .left-login > h1 {
-        font-size: 45pt;
-        margin-top: -50px;
-    }
-    .left-login > p {
-        font-size: 18pt;
-        margin-top: -15px;
-    }
-
-    .card-login {
-        width: 75%;
-    }
-
-    .card-login {
-        width: 92%;
-    }
-
-    .bnt-login {
-        width: 100%;
-    }
-    .bnt-redefini {
-        width: 100%;
-        margin-top: 50px;
-    }
-    .bnt-criar {
-        width: 75%;
-        margin-top: -25px;
-    }
-
+.btn-criar {
+    color: #000000;
+    background-color: #FFFFFF;
+    box-shadow: 0px 10px 30px -12px rgba(0, 216, 255, 0.3);
 }
 
-@media screen and (max-width: 960px){
-    .left-login {
-        width: 50%;
-    }
-
-    .left-login > h1 {
-        font-size: 45pt;
-        margin-top: -50px;
-    }
-    .left-login > p {
-        font-size: 18pt;
-        margin-top: -15px;
-    }
-
-    .card-login {
-        width: 75%;
-    }
-
-    .card-login {
-        width: 92%;
-    }
-
-    .bnt-login {
-        width: 100%;
-    }
-    .bnt-redefini {
-        width: 100%;
-        margin-top: 50px;
-    }
-    .bnt-criar {
-        width: 75%;
-        margin-top: -25px;
-    }
-
+.btn-criar:hover {
+    background-color: #f0f0f0;
 }
 
-@media screen and (max-width: 760px){
-    .left-login {
-        width: 50%;
-    }
-
-    .left-login > h1 {
-        font-size: 45pt;
-        margin-top: -50px;
-    }
-    .left-login > p {
-        font-size: 18pt;
-        margin-top: -15px;
-    }
-
-    .card-login {
-        width: 75%;
-    }
-
-    .card-login {
-        width: 92%;
-    }
-
-    .bnt-login {
-        width: 100%;
-    }
-    .bnt-redefini {
-        width: 100%;
-        margin-top: 50px;
-    }
-    .bnt-criar {
-        width: 75%;
-        margin-top: -25px;
-    }
-
+.btn-login:active, .btn-criar:active {
+    transform: scale(0.98); /* Feedback tátil de clique */
 }
 
-@media screen and (max-width: 600px){
+/* 3. Responsividade Limpa e Sem Duplicatas (Mobile First/Adaptativo) */
+@media screen and (max-width: 960px) {
+    .card-login {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 600px) {
     .main-login {
         flex-direction: column;
-        overflow: hidden;
+        overflow-y: auto; /* Permite scroll em celulares muito pequenos */
+    }
+
+    .left-login {
+        width: 100%;
+        height: auto;
+        padding: 40px 20px 10px 20px;
     }
 
     .left-login > h1 {
-     width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;  
-    margin-top: 20px;
+        font-size: 2.5rem;
     }
 
-    .left-login > p {
-        display: none;
+    .left-login > p, .left-img {
+        display: none; /* Oculta elementos secundários no mobile para focar no login */
     }
 
-    .left-img{
-          display: none;
-    }
-
-     .left-login {
+    .right-login {
         width: 100%;
         height: auto;
+        padding: 20px 0 40px 0;
     }
 
-     .right-login {
-        width: 100%;
-        height: auto;
-        margin-top: -20px;
-    }
-
-    .right-login{
-        width: 100%;
-        margin-left: 50px;
-    }
-
-    .card-login{
-        width: 800%;
-        min-height: 500px;
-    }
-
-    .text-action {
-        width: 150%;
-        display: flex;
-        justify-content: center;
-        align-items: center;  
-        margin-left: 2px;
+    .card-login {
+        width: 90%;
+        padding: 25px;
     }
 }
